@@ -280,17 +280,6 @@ async def update():
 
     print("update() task started")
     updated_list = scan_mangas(mangas)
-
-    # FlackShack#9395 232656557454655488
-    # MugWuffun#9922 157616206843478016
-    # MangaBot#1648 875534869566992434
-    # AllWeNeedIsHope#4252 232680124854697987
-    # jackosis214#1440 478800702097850369
-    # Ztrider#3503 214940932972347392
-    # SSMONEY#0049 426932687526166539
-    # Slut for Instant Noodles (Devin)#6604 271107224691015681
-    # Antacidsoup90#1310 300776017369235457
-    # toocurly#1213 227176236034686976
     
     for user in users['users']:
         member = int(user['id'])
