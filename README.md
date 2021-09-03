@@ -1,5 +1,5 @@
 # mangabot
-Pythonic Discord bot for creating catalouges of users, sources, and mangas for later notification of new releases
+Python Discord bot for creating catalouges of users, sources, and mangas for later notification of new releases
 
 ## Bots dbs
 Most information used by the bot is stored/configured within four .json files:
