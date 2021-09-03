@@ -295,13 +295,13 @@ async def update():
 def help_msg():
 
     text = "**(◕‿◕) The following is a list of commands, senpai:** \n \
-`@MangaSlave list` \n \
-`@MangaSlave update` manually force an update of catalogue\n \
-`@MangaSlave add [LINK/NAME]` \n \
-`@MangaSlave del [NAME]` \n \
-`@MangaSlave add [LINK],[LINK],[LINK]....` Mixed types works.\n \
-`@MangaSlave del [NAME],[NAME],[NAME]....` \n \
-`@MangaSlave source [NAME] [LINK] [xpath_to_name] [xpath_to_date_updated] [xpath_to_chapter/episode]` \n \
+`@MangaBot list` \n \
+`@MangaBot update` manually force an update of catalogue\n \
+`@MangaBot add [LINK/NAME]` \n \
+`@MangaBot del [NAME]` \n \
+`@MangaBot add [LINK],[LINK],[LINK]....` Mixed types works.\n \
+`@MangaBot del [NAME],[NAME],[NAME]....` \n \
+`@MangaBot source [NAME] [LINK] [xpath_to_name] [xpath_to_date_updated] [xpath_to_chapter/episode]` \n \
 **Please do not use the source command unless you know what you are doing.**"
 
     return text
