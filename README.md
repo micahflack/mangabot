@@ -3,6 +3,7 @@ Pythonic Discord bot for creating catalouges of users, sources, and mangas for l
 
 ## Bots dbs
 Most information used by the bot is stored/configured within four .json files:
+
 * users.json
 * mangas.json
 * sources.json
@@ -65,28 +66,37 @@ Quotes is used with the owoify library to produce owo-ified quotes.
 ## The commands are used as follows:
 
 To get the current sources, scannable mangas, and reading list:
+
 `@MangaBot list`
 
 Manually issues an update to scan library for new chapters (typically tasked out every 6hrs)
+
 `@MangaBot update`
 
 Adds mangas to the library if source is supported.
+
 `@MangaBot add [LINK/NAME]`
+
 `@MangaBot add [LINK],[LINK],[LINK]....`
 
 Deletes mangas from a users reading list.
+
 `@MangaBot del [NAME]`
+
 `@MangaBot del [NAME],[NAME],[NAME]....`
 
 Allows a user to add users given the correct XPATHs to target.
+
 `@MangaBot source [NAME] [LINK] [xpath_to_name] [xpath_to_date_updated] [xpath_to_chapter/episode]`
 
 This is an example if you were to add support for VIZ Manga:
+
 `@MangaBot source VIZ https://www.viz.com/ /html/body/div[3]/section[1]/div[1]/h2 /html/body/div[3]/section[2]/div/div[2]/div[2]/a/div[1]/table/tbody/tr/td /html/body/div[3]/section[2]/div/div[2]/div[2]/a/div[2]/table/tbody/tr/td[1]/div`
 
 ## Compatible Sources
 
 So far the Discord bot has been tested with the following sources:
+
 * https://ww2.manganelo.tv
 * https://www.manganelo.tv
 * https://manganelo.tv
