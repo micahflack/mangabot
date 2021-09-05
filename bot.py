@@ -58,6 +58,7 @@ async def on_ready():
     print(f"Running on: {platform.system()} {platform.release()} ({os.name})")
     print("-------------------")
     status_task.start()
+    update.start()
 
 # Setup the game status task of the bot
 @tasks.loop(minutes=1.0)
@@ -104,6 +105,7 @@ def xpath_scrape(tree, pattern, href):
 def scan_source(args):
     for i in sources['sources']:
         if i['link'] in args:
+            print(f"processing... {args}")
             tree = page_request(args)
             name = xpath_scrape(tree, i['name_xpath'], False)[0]
             link = args
@@ -475,8 +477,6 @@ async def on_message(message):
 
 
 if __name__ == "__main__":
-
-    update.start()
 
     # Run the bot with the token
     bot.run(config["token"])
