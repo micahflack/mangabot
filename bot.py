@@ -343,6 +343,7 @@ async def on_message(message):
                 
                 tmp = notify(user, updated_list)
                 if tmp:
+                    print(f"notifying {user} of new chapters")
                     msg = "**New chapters inbound!**\n```"+tmp+"```"
                     await member.send(msg)
 
