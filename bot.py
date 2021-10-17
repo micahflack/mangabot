@@ -171,12 +171,16 @@ def del_manga(users, user, list_mangas, name):
 
 def add_source(sources, args):
 
+    if args[2][-1] == "/":
+        args[2] = args[2][:-1]
+
     source = {
         "name": args[2],
         "link": args[3],
         "name_xpath": args[4],
         "last_updated_xpath": args[5],
-        "chapter_xpath": args[6]
+        "chapter_xpath": args[6],
+        "chapter_link": args[7]
     }
 
     source = json.dumps(source)
@@ -296,14 +300,14 @@ async def update():
 
 def help_msg():
 
-    text = "**(◕‿◕) The following is a list of commands, senpai:** \n \
+    text = "**The following is a list of commands:** \n \
 `@MangaBot list` \n \
 `@MangaBot update` manually force an update of catalogue\n \
 `@MangaBot add [LINK/NAME]` \n \
 `@MangaBot del [NAME]` \n \
 `@MangaBot add [LINK],[LINK],[LINK]....` Mixed types works.\n \
 `@MangaBot del [NAME],[NAME],[NAME]....` \n \
-`@MangaBot source [NAME] [LINK] [xpath_to_name] [xpath_to_date_updated] [xpath_to_chapter/episode]` \n \
+`@MangaBot source [NAME] [LINK] [xpath_to_name] [xpath_to_date_updated] [xpath_to_chpt_num] [xpath_to_chapter/episode]` \n \
 **Please do not use the source command unless you know what you are doing.**"
 
     return text
@@ -453,9 +457,13 @@ async def on_message(message):
             args = args.split(" ")
 
             name = args[2]
+            if args[3][-1] == "/":
+                link = args[3][:-1]
+            else:
+                link = args[3]
 
             for i in sources['sources']:
-                if name.lower() == i['name'].lower():
+                if link == i['link']:
                     await message.author.send("ಠ_ಠ This source, "+name+", already exists!!!!")
                     return
 
