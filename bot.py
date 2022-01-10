@@ -171,9 +171,6 @@ def del_manga(users, user, list_mangas, name):
 
 def add_source(sources, args):
 
-    if args[2][-1] == "/":
-        args[2] = args[2][:-1]
-
     source = {
         "name": args[2],
         "link": args[3],
@@ -277,7 +274,7 @@ def notify(user, updated_list):
         if(len(list(filter (lambda x : x == update, user['mangas']))) > 0):
             for z in mangas['mangas']:
                 if update == z['name']:
-                    msg += z['chapter_link']+'\n'
+                    msg += z['name']+' | '+z['current_chapter']+'\n'+z['chapter_link']+'\n'
 
     return msg
 
@@ -293,7 +290,7 @@ async def update():
         
         tmp = notify(user, updated_list)
         if tmp:
-            msg = "**New chapters inbound!**\n```"+tmp+"```"
+            msg = "**New chapters inbound!**\n"+tmp
             await member.send(msg)
 
     return
@@ -448,7 +445,7 @@ async def on_message(message):
                         await message.author.send(msg)
 
                     if list == "":
-                        await message.author.send("```Nigga you need some sauce ༼ つ ◕_◕ ༽つ```")
+                        await message.author.send("```Damn boi, you need some sauce ༼ つ ◕_◕ ༽つ```")
                     break
             return
 
@@ -459,6 +456,7 @@ async def on_message(message):
             name = args[2]
             if args[3][-1] == "/":
                 link = args[3][:-1]
+                args[3] = args[3][:-1]
             else:
                 link = args[3]
 
